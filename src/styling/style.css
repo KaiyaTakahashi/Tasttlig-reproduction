@@ -279,7 +279,6 @@ ul {
 
 #question-form-grid {
     display: grid;
-    column-width: 400px;
     grid-template-areas: 
     "a b"
     "c b"
@@ -287,13 +286,23 @@ ul {
     "e b"
     ;
     column-gap: 20px;
+    row-gap: 30px;
     padding: 10px 20px 10px 20px;
     height: auto;
     text-align: start;
 }
 
+.form-text-field {
+    min-width: 90%;
+    height: 30px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+
 #name-tf {
     grid-area: a;
+    background-color: #ffffff;
 }
 #email-tf {
     grid-area: c;
@@ -316,19 +325,36 @@ ul {
 
 #question-form-text {
     font-size: 13px;
+    padding-left: 5px;
+    padding-right: 5px;
 }
 
-input[type=text] {
-    min-width: 300px;
-    padding: 12px 20px;
-    margin: 8px 0;
-    box-sizing: border-box;
-}
-
-#bigger-input {
+.bigger-input {
     height: 100px;
 }
 
+form {
+    width: 100%;
+}
+
+#send-button {
+    display: inline-block;
+    color: #fff;
+    background-color: rgb(29, 51, 173);
+    border: none;
+    padding: 15px 20px;
+    border-radius: 0;
+    cursor: pointer;
+    text-decoration: none;
+    font-family: inherit;
+    font-weight: bold;
+    box-shadow: 0px 3px rgb(11, 0, 73);
+}
+
+#send-button:hover {
+    background-color: rgb(53, 71, 174);
+    transition: 0.5s;
+}
 
 #question-form-image-view {
     background-image: url('/Users/kaiyatakahashi/Desktop/my-first-project/src/images/festivals.jpg');
@@ -385,13 +411,9 @@ input[type=text] {
 
 @media (max-width: 900px) {
     #question-form-grid {
-        display: flex;
-        flex-direction: column;
-        row-gap: 30px;
-        width: 100%;
+        display: inline;
         height: auto;
         text-align: center;
-        padding: 0px 10px 0px 10px;
     }
 
     #question-form-container {
@@ -400,10 +422,6 @@ input[type=text] {
         max-width: 900px;
         width: 90%;
         align-items: center;
-    }
-
-    input[type=text] {
-        min-width: 90%;
     }
 
     #warning-text {

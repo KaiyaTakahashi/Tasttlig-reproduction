@@ -1,10 +1,7 @@
 import React from "react"
 import "../styling/components.css"
 
-const WarningText = ({ text, isHidden }) => {
-    if (isHidden) {
-        return null;
-    }
+const WarningText = ({ text }) => {
     return (
         <h6 id="warning-text">{text}</h6>
     );
